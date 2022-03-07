@@ -1,0 +1,2 @@
+"C:\Program Files\Java\jdk1.8.0_321\bin\jarsigner.exe" -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\Users\alanp\Desktop\Android-dev\Memory\upload-keystore.jks -signedjar C:\Users\alanp\Desktop\Android-dev\Memory\SignedOutput\test.aab C:\Users\alanp\Desktop\Android-dev\Memory\platforms\android\app\build\outputs\bundle\release\app-release.aab upload
+pause

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.wolfIndustries.memory" version="a0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.wolfIndustries.memory" version="a0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MemoryGame</name>
-    <description>Sample Apache Cordova App</description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+    <description>Fun memory game</description>
+    <author email="fywolf@wolfindustries.org" href="https://wolfindustries.org">
+        FyWolf
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
