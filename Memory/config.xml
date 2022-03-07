@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.wolfIndustries.memory" version="a0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MemoryGame</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="android">
+        <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+        <icon src="ressources/icon/ldpi.png" density="ldpi"/>
+        <icon src="ressources/icon/mdpi.png" density="mdpi"/>
+        <icon src="ressources/icon/hdpi.png" density="hdpi"/>
+        <icon src="ressources/icon/xhdpi.png" density="xhdpi"/>
+        <icon src="ressources/icon/xxhdpi.png" density="xxhdpi"/>
+        <icon src="ressources/icon/xxxhdpi.png" density="xxxhdpi"/>
+        <splash src="ressources/splash/ldpi.png" density="ldpi"/>
+        <splash src="ressources/splash/mdpi.png" density="mdpi"/>
+        <splash src="ressources/splash/hdpi.png" density="hdpi"/>
+        <splash src="ressources/splash/xhdpi.png" density="xhdpi"/>
+        <splash src="ressources/splash/xxhdpi.png" density="xxhdpi"/>
+        <splash src="ressources/splash/xxxhdpi.png" density="xxxhdpi"/>
+        <preference name="SplashMaintainAspectRatio" value="true" />
+        <preference name="ShowSplashScreenSpinner" value="false"/>
+        <preference name="FadeSplashScreen" value="true"/>
+    </platform>
+</widget>
