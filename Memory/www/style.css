@@ -2,14 +2,13 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    height: 100vh;
     margin: 0;
-    background: fixed;
-    background-color: rgb(2,0,36);
-    background: linear-gradient(166deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 17%, rgba(0,212,255,1) 100%);
+    background: rgb(40, 37, 53);
 }
 
 .mainContainer {
-    height: 100vh;
+    height: 80vh;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -42,4 +41,52 @@ body {
 .playBtn:hover {
     background-color: white;
     color: black;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(57, 53, 75);
+    padding: 1vw 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+footer {
+    height: 9vh;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+button {
+    width: 25vw;
+}
+
+.profilePicture {
+    height: 95%;
+    border-radius: 50%;
+    margin-left: 1vw;
+}
+
+.playerInformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 80%;
+    color: white;
+    font-weight: 600;
+}
+
+#nick {
+    margin: 0;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
 }
