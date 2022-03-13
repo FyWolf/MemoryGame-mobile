@@ -13,21 +13,44 @@
         <div class="playerInformation">
             <p id="nick">Nickname</p>
             <div class="counters">
-                <span>Level: <span>0</span> </span>
-                <span>Credits: <span>0</span></span>
+                <span>Level: <span id="levels">0</span> </span>
+                <span>Credits: <span id="coins">0</span></span>
             </div>
         </div>
     </header>
-    <div class="mainContainer">
-    <h1 class="title">Memory Game</h1>
-    <a class="playBtn" href="game.html">Play</a>
-    </div>
+    <main>
+        <section class="section show" id="play">
+            <div class="levelCard">
+                <div class="levelDesc">
+                    <h3>Level 1</h3>
+                    <p>Difficulty: easy</p>
+                </div>
+                <a class="playBtn" href="game.html">Play</a>
+            </div>
+        </section>
+        <section class="section jcenter" id="shop">
+            <p>Page still under work, comming soon</p>
+        </section>
+        <section class="section jcenter" id="inv">
+            <p>Page still under work, comming soon</p>
+        </section>
+        <section class="section jcenter" id="sett">
+            <div class="settings">
+                <p>Vibration :</p>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="switch-vibration">
+                    <label for="switch-vibration"></label>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer>
-        <button>Play</button>
-        <button>Shop</button>
-        <button>Inventory</button>
-        <button>Settings</button>
+        <button class="toggeled" id="playbtn">Play</button>
+        <button class="" id="shopbtn">Shop</button>
+        <button class="" id="invbtn">Inventory</button>
+        <button class="" id="settingbtn">Settings</button>
     </footer>
-    <script src="script-main.js"></script>
+    <script src="js/script-main.js"></script>
+    <script src="js/script-menu.js"></script>
 </body>
 </html>

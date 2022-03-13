@@ -81,8 +81,12 @@ body {
     font-size: 8vw;
     padding: 7%;
     position: relative;
-    transition: transform 1s;
+    transition: transform 0.5s;
     transform-style: preserve-3d;
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    -ms-transition: transform 0.5s;
+    -o-transition: transform 0.5s;
 }
 
 .bloc {

@@ -10,6 +10,7 @@ let child1 = null;
 let child2 = null;
 let timeout = false;
 let score = 0;
+let vibration = JSON.parse(localStorage.getItem("vibration"));
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -66,7 +67,6 @@ function resetTimer() {
         target.classList.remove("win");
     }
     hideBlocks();
-    //uploadscore();
     resetscore();
     shuffle(emojis);
     div.classList.remove("div-blocks_border")
@@ -137,13 +137,15 @@ function select(selection, child) {
             child2 = null;
             hideBlocks();
             updateScore();
-            navigator.vibrate([100])
+            if(vibration === true) {
+                navigator.vibrate([100]);
+            }
         }
         else {
             selection1 = null;
             selection2 = null;
             timeout = true;
-            test = window.setTimeout(hideBlocks, 1000);
+            test = window.setTimeout(hideBlocks, 500);
         }
     }
 }
@@ -152,6 +154,9 @@ function updateScore() {
     let target = document.getElementById("score");
     score = score + 1;
     target.innerText = score;
+    if(score == 18){
+        setTimeout(() => {resetTimer()}, 2000);
+    }
 }
 
 function resetscore() {
@@ -160,15 +165,6 @@ function resetscore() {
     target.innerText = score;
 }
 
-//function uploadscore() {
-//    for(let i = 0; i < 10; i++){
-//        let target = document.getElementById(`sc-${i}`);
-//        if(parseInt(target.innerText) == 0) {
-//            target.innerText = score;
-//            break;
-//        }
-//    }
-//}
 
 createtimer();
 createblocks();

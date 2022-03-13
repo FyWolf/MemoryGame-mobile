@@ -7,6 +7,18 @@ body {
     background: rgb(40, 37, 53);
 }
 
+p {
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 .mainContainer {
     height: 80vh;
     align-items: center;
@@ -17,25 +29,6 @@ body {
 
 .title {
     color: white;
-}
-
-.playBtn {
-    position: fixed;
-    top: 40vh;
-    color: white;
-    padding: 10px 30px;
-    border: 3px solid white;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    text-decoration: none;
-    transition: all 0.1s ease-in-out;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
 }
 
 .playBtn:hover {
@@ -59,6 +52,9 @@ footer {
     display: flex;
     justify-content: stretch;
     align-items: stretch;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
 }
 
 button {
@@ -88,5 +84,131 @@ button {
 .counters {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 80%;
+}
+
+main {
+    height: 80vh;
+}
+
+.section {
+    height: 78vh;
+    width: 100%;
+    margin: 5% 0;
+    position: fixed;
+    left: -100%;
+    transition: all 0.5s ease-in-out;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    z-index: 1;
+}
+
+.jcenter {
+    justify-content: center;
+}
+
+.show {
+    left: 0;
+}
+
+.toggle-switch {
+    margin:20px 0px;
+}
+
+.toggle-switch label {
+  position:relative;
+  display:block;
+  width:15vw;
+  height:7vw;
+  background:#ddd;
+  cursor:pointer;
+  border-radius:15px;
+  transition:all 300ms ease-in-out;
+}
+
+.toggle-switch label:after {
+  content:"";
+  position:absolute;
+  width:5vw;
+  height:5vw;
+  background:#eee;
+  top:50%;
+  left:0px;
+  transform:translateY(-50%);
+  border-radius:50%;
+  box-shadow:inset 0px 0px 1px 1px #ddd;
+  transition:all 300ms ease-in-out;
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+}
+
+.toggle-switch input:checked + label:after {
+  left:calc(15vw - 6vw);
+}
+
+.toggle-switch input#switch-vibration:checked + label {
+  background:rgb(157,213,255);
+}
+.toggle-switch input#switch-vibration:checked + label:after {
+  background:rgb(34,151,255);
+}
+
+.toggle-switch input {
+  display:none;
+}
+
+.settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+footer > button {
+    background-color: #39354b;
+    border: 1px solid rgba(0, 0, 0, 0.411);
+    color:  white;
+    transition: all 0.5s ease-in-out;
+}
+
+.toggeled {
+    margin: 1vw;
+    border: 1px solid rgba(255, 255, 255, 0.411);
+}
+
+.levelCard {
+    width: 90%;
+    border: 4px solid white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: 2% 0;
+}
+
+.levelDesc {
+    width: 70%;
+    margin: 2% 0 2% 2%;
+}
+
+.playBtn {
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: white;
+}
+
+.playBtn:hover {
+    background-color: rgba(255, 255, 255, 0.445);
+    color: white;
 }
