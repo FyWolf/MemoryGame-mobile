@@ -16,10 +16,13 @@
                 <span>Level: <span id="levels">0</span> </span>
                 <span>Credits: <span id="coins">0</span></span>
             </div>
+            <div class="progressBar" id="progressEmpty">
+                <div id="progressFull"></div>
+            </div>
         </div>
     </header>
     <main>
-        <section class="section show" id="play">
+        <section class="section" id="play">
             <div class="levelCard">
                 <div class="levelDesc">
                     <h3>Level 1</h3>
@@ -28,8 +31,37 @@
                 <a class="playBtn" href="game.html">Play</a>
             </div>
         </section>
-        <section class="section jcenter" id="shop">
-            <p>Page still under work, comming soon</p>
+        <section class="section shop show" id="shop">
+            <div class="shopCardDiv">
+                <img src="images/emoji1.png">
+                <div>
+                    <h4>Title</h4>
+                    <p>small description</p>
+                </div>
+            </div>
+            <div class="shopCardDiv">
+                <img src="images/emoji1.png">
+                <div>
+                    <h4>Title</h4>
+                    <p>small description</p>
+                </div>
+            </div>
+            <div class="shopCardDiv">
+                <img src="images/emoji1.png">
+                <div>
+                    <h4>Title</h4>
+                    <p>small description</p>
+                </div>
+            </div>
+            <div class="shopCardDiv">
+                <img src="images/emoji1.png">
+                <div>
+                    <h4>Title</h4>
+                    <p>small description</p>
+                </div>
+            </div>
+            <!-- <p>Page still under work, comming soon</p>
+            <button id="addexp">add 1xp</button> -->
         </section>
         <section class="section jcenter" id="inv">
             <p>Page still under work, comming soon</p>
@@ -45,11 +77,12 @@
         </section>
     </main>
     <footer>
-        <button class="toggeled" id="playbtn">Play</button>
-        <button class="" id="shopbtn">Shop</button>
+        <button class="" id="playbtn">Play</button>
+        <button class="toggeled" id="shopbtn">Shop</button>
         <button class="" id="invbtn">Inventory</button>
         <button class="" id="settingbtn">Settings</button>
     </footer>
+    <script src="js/db.js"></script>
     <script src="js/script-main.js"></script>
     <script src="js/script-menu.js"></script>
 </body>

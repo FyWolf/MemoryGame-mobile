@@ -1,6 +1,4 @@
-let vibration = JSON.parse(localStorage.getItem("vibration"));
-let vibrationSetting = document.querySelector("#switch-vibration")
-
+let vibrationSetting = document.querySelector("#switch-vibration");
 
 function createButtons() {
     let play = document.querySelector("#playbtn");
@@ -95,25 +93,29 @@ function initializeVar() {
     }
 }
 
-function updateCoin(ammount){
-    coin = coin + parseInt(ammount);
-    localStorage.setItem("coin", coin);
-}
-
 function displayCoin(ammount){
     const target = document.getElementById("coins");
     target.innerText = ammount;
 }
 
-
-function updateLevel(ammount){
-    // level = level + parseInt(ammount);
-    // localStorage.setItem("level", level);
-}
-
 function displayLevel(ammount){
     const target = document.getElementById("levels");
     target.innerText = ammount;
+}
+function setProgressBar() {
+    const bar = document.getElementById("progressFull");
+    let percentage = (100 * parseInt(experience)) / parseInt(levelStep)
+    bar.setAttribute("style", `width:${percentage}%`)
+    console.log(percentage);
+}
+
+function cheat() {
+    const button = document.getElementById("addexp")
+    button.onclick = function() {
+        updateLevel(1);
+        setProgressBar();
+        displayLevel(level)
+    }
 }
 
 createButtons()
@@ -121,3 +123,6 @@ initializeVar()
 initializeSettings()
 displayCoin(coin)
 displayLevel(level)
+//cheat()
+setProgressBar()
+

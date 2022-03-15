@@ -212,3 +212,54 @@ footer > button {
     background-color: rgba(255, 255, 255, 0.445);
     color: white;
 }
+
+.progressBar {
+    background-color: rgba(255, 255, 255, 0.445);
+    height: 1vh;
+    width: 60vw;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.progressBar > div {
+    background-color: #7152ff;
+    height: 100%;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.shop {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 3vw;
+}
+
+.shopCardDiv {
+    background-color: red;
+    width: 25vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1vw;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.shopCardDiv > img {
+    width: 95%;
+}

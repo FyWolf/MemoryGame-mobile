@@ -10,7 +10,6 @@ let child1 = null;
 let child2 = null;
 let timeout = false;
 let score = 0;
-let vibration = JSON.parse(localStorage.getItem("vibration"));
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -50,7 +49,7 @@ function createtimer() {
 
 function startTimer() {
     if(!timerInter) {
-        time = 100;
+        time = 20;
         started = true;
         timerInter = setInterval(timer, 1000)
     }
@@ -96,6 +95,7 @@ function timer () {
         }
     }
     else {
+        updateLevel(score)
         resetTimer();
     }
 }
@@ -155,6 +155,7 @@ function updateScore() {
     score = score + 1;
     target.innerText = score;
     if(score == 18){
+        updateLevel(score)
         setTimeout(() => {resetTimer()}, 2000);
     }
 }
