@@ -70,6 +70,81 @@ function initializeSettings() {
     }
 }
 
+function createShop() {
+    const target = document.getElementById("shop");
+
+    item.forEach((result, id) => {
+      const content = `
+        <div class="shopCardDiv">
+            <img src="${result.img}">
+            <div>
+                <h4>${result.title}</h4>
+                <p>${result.Sdesc}</p>
+                <button id="shopItem${id}">Infos</button>
+            </div>
+        </div>
+        `;
+      target.innerHTML += content;
+    });
+}
+
+
+function updateInv() {
+    const target = document.getElementById("inv");
+    target.innerHTML = ""
+    if (inventory.length > 0) {
+
+        for(let i = 0; i < inventory.length; i++){
+                const content = `
+                  <div class="shopCardDiv" id="inv${i}">
+                      <img src="${item[inventory[i]].img}">
+                      <div>
+                          <h4>${item[inventory[i]].title}</h4>
+                          <p>${item[inventory[i]].Sdesc}</p>
+                          <button id="selectDeck${inventory[i]}">Select Deck</button>
+                      </div>
+                  </div>
+                  `;
+                  target.innerHTML += content;
+        }
+    }
+    else {
+        target.innerHTML = "<p>Votre Inventaire est vide :c</p>"
+    }
+}
+
+function initializeShopButton() {
+    item.forEach((result, id) => {
+        let button = document.getElementById(`shopItem${id}`)
+        button.onclick = function() {
+            updateItemPage(id);
+        }
+    });
+}
+
+function updateItemPage(id) {
+    const hider = document.getElementById("bgHide");
+    const itemPage = document.getElementById("itemPage");
+    const itemImage = document.getElementById("itemImage");
+    const itemTitle = document.getElementById("itemTitle");
+    const itemDesc = document.getElementById("itemDesc");
+    const itemLevel = document.getElementById("itemLevel");
+    const itemPrice = document.getElementById("itemPrice");
+    const buyBtn = document.getElementById("buyButton");
+    hider.classList.remove("hidden");
+    itemImage.setAttribute("src", item[id].img);
+    itemTitle.innerText = item[id].title;
+    itemDesc.innerText = item[id].Ldesc;
+    itemLevel.innerText = item[id].level;
+    itemPrice.innerText = item[id].price;
+    itemPage.classList.remove("hidden");
+
+    buyBtn.onclick = function() {
+        buyItem(id);
+    }
+
+}
+
 function initializeVar() {
     if(localStorage.getItem("vibration") === null) {
         localStorage.setItem("vibration", true)
@@ -104,25 +179,61 @@ function displayLevel(ammount){
 }
 function setProgressBar() {
     const bar = document.getElementById("progressFull");
-    let percentage = (100 * parseInt(experience)) / parseInt(levelStep)
-    bar.setAttribute("style", `width:${percentage}%`)
-    console.log(percentage);
+    let percentage = (100 * parseInt(experience)) / parseInt(levelStep);
+    bar.setAttribute("style", `width:${percentage}%`);
 }
 
-function cheat() {
-    const button = document.getElementById("addexp")
-    button.onclick = function() {
-        updateLevel(1);
-        setProgressBar();
-        displayLevel(level)
+document.getElementById("closeitem").onclick = function() {
+    const hider = document.getElementById("bgHide");
+    const itemPage = document.getElementById("itemPage");
+    hider.classList.add("hidden");
+    itemPage.classList.add("hidden");
+}
+
+function buyItem(id) {
+    if (inventory.indexOf(id) == -1) {
+        if (level >= item[id].level){
+            if (coin >= item[id].price){
+                updateInventory(id);
+                updateCoin(`-${item[id].price}`);
+                displayCoin(coin)
+                updateInv()
+            }
+            else {
+                console.log("Vous manquez d'argent pour l'acheter !")
+            }
+        }
+        else {
+            console.log("Vous n'avez pas le niveau pour l'acheter !")
+        }
+    }
+    else {
+        console.log("L'objet est déjà dans votre inventaire !")
     }
 }
 
+function setActiveDeck() {
+    inventory.forEach((result, id) => {
+        const target = document.getElementById(`inv${id}`);
+        if (id == usedDeck){
+            target.classList.add("greenOutline")
+        }
+        else {
+            target.classList.remove("greenOutline")}
+    });
+}
+
+function selectDeck(id) {
+    
+}
+
+updateInv()
+setActiveDeck()
+createShop()
+initializeShopButton()
 createButtons()
 initializeVar()
 initializeSettings()
 displayCoin(coin)
 displayLevel(level)
-//cheat()
 setProgressBar()
-

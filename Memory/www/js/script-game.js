@@ -1,4 +1,3 @@
-let emojis = ["😀","😀","😂","😂","🤣","🤣","❤️","❤️","😍","😍","😒","😒","👌","👌","😘","😘","💕","💕","😁","😁","👍","👍","🙌","🙌","🤦‍♀️","🤦‍♀️","🤦‍♂️","🤦‍♂️","🤷‍♀️","🤷‍♀️","🤷‍♂️","🤷‍♂️","✌️","✌️","🤞","🤞"];
 const countdown = document.getElementById("time");
 const div = document.querySelector(".div-blocks");
 let started = false;
@@ -23,10 +22,10 @@ function shuffle(array) {
     return array;
 }
 
-shuffle(emojis);
+shuffle(item[usedDeck].emojis);
 
 function createblocks() {
-    emojis.forEach((result, id) => {
+    item[usedDeck].emojis.forEach((result, id) => {
         let target = document.querySelector(`#b-${id}`);
         let content = `
             <p class="bloc bloc--front"></p>
@@ -49,7 +48,7 @@ function createtimer() {
 
 function startTimer() {
     if(!timerInter) {
-        time = 20;
+        time = 100;
         started = true;
         timerInter = setInterval(timer, 1000)
     }
@@ -67,7 +66,7 @@ function resetTimer() {
     }
     hideBlocks();
     resetscore();
-    shuffle(emojis);
+    shuffle(item[usedDeck].emojis);
     div.classList.remove("div-blocks_border")
     setTimeout(() => {createblocks()}, 1000);
 }
@@ -156,6 +155,7 @@ function updateScore() {
     target.innerText = score;
     if(score == 18){
         updateLevel(score)
+        updateCoin(25)
         setTimeout(() => {resetTimer()}, 2000);
     }
 }
