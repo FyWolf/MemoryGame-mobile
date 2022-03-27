@@ -240,6 +240,7 @@ footer > button {
     padding:1vh 1vw 0 1vw;
     border-radius: 5px;
     margin: 2% 0;
+    border: 2px solid rgba(0, 255, 34, 0);
 }
 
 .shopCardDiv > div {
@@ -263,10 +264,12 @@ footer > button {
 
 .shopCardDiv > div > h4 {
     margin: 1% 0;
+    font-size: 3.5vw;
 }
 
 .shopCardDiv > div > p {
     margin: 5px 0;
+    font-size: 3vw;
 }
 
 .back {
@@ -341,4 +344,33 @@ footer > button {
 
 .greenOutline {
     border: 2px solid rgb(0, 255, 34);
+}
+
+.alert {
+    position: fixed;
+    top: -10vh;
+    left: 10vw;
+    width: 80vw;
+    z-index: 4;
+    text-align: center;
+    color: white;
+}
+
+.alert > p {
+    margin: 2% 0;
+}
+
+.error {
+    background-color: rgba(255, 0, 0, 0.616);
+    border: 2px solid red;
+}
+
+.success {
+    background-color: rgba(0, 255, 0, 0.7);
+    border: 2px solid rgb(0, 255, 0);
+}
+
+.info {
+    background-color: rgba(0, 60, 255, 0.7);
+    border: 2px solid rgb(0, 60, 255);
 }

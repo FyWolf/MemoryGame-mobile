@@ -93,7 +93,6 @@ function updateInv() {
     const target = document.getElementById("inv");
     target.innerHTML = ""
     if (inventory.length > 0) {
-
         for(let i = 0; i < inventory.length; i++){
                 const content = `
                   <div class="shopCardDiv" id="inv${i}">
@@ -110,6 +109,15 @@ function updateInv() {
     }
     else {
         target.innerHTML = "<p>Votre Inventaire est vide :c</p>"
+    }
+}
+
+function setDeckBtn() {
+    for(let i = 0; i < inventory.length; i++){
+        let selectBtn = document.getElementById(`selectDeck${inventory[i]}`);
+        selectBtn.onclick = function() {
+            selectDeck(i)
+        }
     }
 }
 
@@ -198,17 +206,19 @@ function buyItem(id) {
                 updateCoin(`-${item[id].price}`);
                 displayCoin(coin)
                 updateInv()
+                setActiveDeck()
+                alert("Item brought !", "success")
             }
             else {
-                console.log("Vous manquez d'argent pour l'acheter !")
+                alert("You don't have enough coins !", "error")
             }
         }
         else {
-            console.log("Vous n'avez pas le niveau pour l'acheter !")
+            alert("You don't have the level required !", "error")
         }
     }
     else {
-        console.log("L'objet est déjà dans votre inventaire !")
+        alert("This item is already brought !", "error")
     }
 }
 
@@ -224,10 +234,19 @@ function setActiveDeck() {
 }
 
 function selectDeck(id) {
-    
+    usedDeck = id
+    localStorage.setItem("deck", usedDeck)
+    setActiveDeck()
+    alert(`Deck ${item[id].title} selected !`, "info")
+}
+function alert(message, state){
+    document.getElementById("alertText").innerText = message;
+    document.getElementById("alertBox").className = `alert ${state}`;
+    $("#alertBox").animate({"top": "+=11vh"}, "slow").delay("500").animate({"top": "-=11vh"}, "slow");
 }
 
 updateInv()
+setDeckBtn()
 setActiveDeck()
 createShop()
 initializeShopButton()
